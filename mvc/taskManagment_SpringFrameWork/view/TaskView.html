@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management</title>
+</head>
+<body>
+    <h1>Task Details</h1>
+    <p><strong>Task ID:</strong> ${task.id}</p>
+    <p><strong>Title:</strong> ${task.title}</p>
+    <p><strong>Description:</strong> ${task.description}</p>
+    <p><strong>Completed:</strong> ${task.completed ? "Yes" : "No"}</p>
+
+    <h2>Update Task</h2>
+    <form action="/update" method="post">
+        <label for="title">Title:</label>
+        <input type="text" name="title" id="title" value="${task.title}" required>
+        <br>
+        <label for="description">Description:</label>
+        <textarea name="description" id="description" required>${task.description}</textarea>
+        <br>
+        <label for="completed">Completed:</label>
+        <input type="checkbox" name="completed" id="completed" ${task.completed ? "checked" : ""}>
+        <br>
+        <button type="submit">Update Task</button>
+    </form>
+</body>
+</html>
